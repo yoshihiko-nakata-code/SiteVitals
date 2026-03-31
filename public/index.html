@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UI/UX 健康診断カルテ</title>
+    <meta
+      name="description"
+      content="URLを1つ入力するだけで、HTML・CSS・HTTPヘッダに基づく UI/UX 健康診断カルテを自動生成する無料ツール。"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div>
+          <p class="eyebrow">Consulting-grade automated audit</p>
+          <h1>UI/UX 健康診断カルテ</h1>
+          <p class="hero-copy">
+            URLを入力して「診断を始める」を押すだけ。<br />
+            HTML・CSS・HTTPヘッダから、会議資料としてそのまま使いやすい診断カルテを自動生成します。
+          </p>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="hero-card card">
+          <form id="diagnosticForm" class="diagnostic-form">
+            <label class="input-label" for="targetUrl">診断対象のウェブページURL</label>
+            <div class="input-row">
+              <input
+                id="targetUrl"
+                name="targetUrl"
+                type="url"
+                inputmode="url"
+                placeholder="https://example.com/"
+                autocomplete="url"
+                spellcheck="false"
+                required
+              />
+              <button id="submitButton" type="submit">診断を始める</button>
+            </div>
+          </form>
+          <p id="helperBox" class="helper-text">
+            DBは不要、生成AI APIも不要。Cloudflare Worker のみで公開しやすい構成を前提にしています。
+          </p>
+          <dl class="hero-facts">
+            <div>
+              <dt>判定対象</dt>
+              <dd>Nielsen + WCAG 2.2 + HTTP/CSS観測値</dd>
+            </div>
+            <div>
+              <dt>出力形式</dt>
+              <dd>健康診断カルテ風レポート / PDF保存対応</dd>
+            </div>
+            <div>
+              <dt>非対応</dt>
+              <dd>認証必須・Bot対策・robots拒否ページ</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section id="statusStrip" class="status-strip card" hidden></section>
+
+        <section id="reportRoot" class="report-root" hidden></section>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
