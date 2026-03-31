@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "ux-health-check-report",
+  "name": "sitevitals",
   "main": "src/worker.js",
   "compatibility_date": "2026-03-31",
   "assets": {
